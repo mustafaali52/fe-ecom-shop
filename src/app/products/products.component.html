@@ -1,0 +1,41 @@
+<h1>Create Product</h1>
+<form #productForm="ngForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="productName">Product Name</label>
+        <input type="text" class="form-control" [(ngModel)]="product.productName" id="productName" name="productName" #productName="ngModel"  required>
+        <!-- <div class="alert alert-danger" *ngIf="productName.touched && !productName.valid">
+            <div *ngIf="productName?.errors?.['required']">Product Name is a required field!</div>
+        </div> -->
+      </div>
+      <div class="form-group col-md-6">
+        <label for="productDescription">Description</label>
+        <input type="text" class="form-control" [(ngModel)]="product.productDescription" id="productDescription" #productDescription="ngModel" placeholder="Description" required>
+        <!-- <div class="alert alert-danger"></div> -->
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="categoryName">Category</label>
+      <input type="text" class="form-control" [(ngModel)]="product.categoryName" id="categoryName" #categoryName="ngModel" placeholder="Category" required>
+      <!-- <div class="alert alert-danger"></div> -->
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Product Price</label>
+      <input type="number" class="form-control" [(ngModel)]="product.productPrice" id="productPrice" #productPrice="ngModel" placeholder="Price" required>
+      <!-- <div class="alert alert-danger"></div> -->
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="productRating">Product Rating</label>
+        <input type="text" class="form-control" [(ngModel)]="product.productRating" #productRating="ngModel" id="productRating" required>
+        <!-- <div class="alert alert-danger"></div> -->
+    </div>
+      <div class="form-group col-md-2">
+        <label for="comments">Comments</label>
+        <input type="text" class="form-control" [(ngModel)]="product.comments" #comments="ngModel" id="comments" required>
+        <!-- <div class="alert alert-danger"></div> -->
+        </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary" (click)="onCreate(productForm)">Create</button>
+  </form>
